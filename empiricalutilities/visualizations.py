@@ -11,6 +11,7 @@ def plot_color_table(df,
                      title=None,
                      rev_index=None,
                      color='RdYlGn',
+                     format=1,
                      ):
     """
     Creates color coded comparison table from dataframe values (green high, red low)
@@ -52,7 +53,7 @@ def plot_color_table(df,
     if title:
         plt.title(title)
     sns.heatmap(cdf, cmap='RdYlGn', linewidths=0.5, annot=labels,
-                fmt='0.1f', cbar=False)
+                fmt=f'0.{format}f', cbar=False)
     plt.xticks(rotation=0)
     plt.yticks(rotation=0)
 
